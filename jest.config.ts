@@ -1,5 +1,7 @@
-module.exports = {
-  preset: 'ts-jest',
+import { Config } from 'jest';
+
+const config: Config = {
+  verbose: true,
   testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
@@ -16,3 +18,5 @@ module.exports = {
     '<rootDir>/node_modules/',
   ],
 };
+
+export default config;
