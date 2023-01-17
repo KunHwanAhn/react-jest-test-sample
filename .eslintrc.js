@@ -1,8 +1,11 @@
+const { version: jestVersion } = require('jest/package.json');
+
 module.exports = {
   env: {
     browser: true,
     es2021: true,
     node: true,
+    'jest/globals': true,
   },
   plugins: ['react'],
   extends: [
@@ -12,6 +15,11 @@ module.exports = {
   ],
   settings: {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    settings: {
+      jest: {
+        version: jestVersion,
+      },
+    },
   },
   rules: {
     'max-len': ['error', { code: 150 }],
@@ -51,6 +59,11 @@ module.exports = {
           scss: 'always',
         }],
       },
+    },
+    {
+      files: ['*.test.(t|j)sx?'],
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
     },
   ],
 };
