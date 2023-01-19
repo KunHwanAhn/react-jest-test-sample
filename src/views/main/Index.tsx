@@ -3,6 +3,7 @@ import React from 'react';
 import { sum } from '@/utils';
 import MyLink from '@/components/MyLink';
 import MyCheckbox from '@/components/MyCheckbox';
+import MyFetch from '@/components/MyFetch';
 
 export default function Index() {
   return (
@@ -18,6 +19,9 @@ export default function Index() {
           labelOn="ON"
           labelOff="OFF"
         />
+      </div>
+      <div>
+        <MyFetch url="/greeting" />
       </div>
     </div>
   );
